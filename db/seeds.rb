@@ -1,7 +1,25 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'net/http'
+require 'csv'
+
+HOMEWORK_URL = 'https://raw.githubusercontent.com/bonobos/fullstack_homework/master'
+PRODUCT_CSV_URL = File.join(HOMEWORK_URL, 'products.csv')
+VARIANT_CSV_URL = File.join(HOMEWORK_URL, 'inventory.csv')
+
+product_csv = Net::HTTP.get(URI.parse(PRODUCT_CSV_URL)).gsub("\", \"", "\",\"")
+variant_csv = Net::HTTP.get(URI.parse(VARIANT_CSV_URL)).gsub(', ', ',')
+
+[Variant, Product].each(&:delete_all)
+
+ActiveRecord::Base.connection.reset_pk_sequence!('variants')
+
+CSV.parse(product_csv, headers: true) do |row|
+  Product.create!(id: row['product_id'],
+                  name: row['product_name'],
+                  description: row['product_description'],
+                  image: row['product_image'])
+end
+
+CSV.parse(variant_csv, headers: true) do |row|
+  Variant.create!(row.to_hash)
+end
+
