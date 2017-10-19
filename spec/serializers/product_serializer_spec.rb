@@ -7,15 +7,10 @@ RSpec.describe ProductSerializer do
     ProductSerializer.new(product).serializable_hash
   end
 
-  it 'includes the name' do
-    expect(serializer_hash[:name]).to eq(product.name)
-  end
-
-  it 'includes the description' do
-    expect(serializer_hash[:description]).to eq(product.description)
-  end
-
-  it 'includes the image' do
-    expect(serializer_hash[:image]).to eq(product.image)
+  it 'includes the name, description, and image' do
+    expect(serializer_hash)
+      .to eq(name: product.name,
+             description: product.description,
+             image: product.image)
   end
 end
