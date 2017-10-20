@@ -18,6 +18,6 @@ RSpec.describe 'Products API', type: :request do
   private
 
   def json
-    JSON.parse(response.body)
+    JSON.parse(response.body)['data']
   end
 end
