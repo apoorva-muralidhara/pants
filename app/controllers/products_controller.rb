@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
   def index
-    render json: Product.all.includes(:variants)
+    render json: Product.includes(:variants), include: :variants
   end
 end
