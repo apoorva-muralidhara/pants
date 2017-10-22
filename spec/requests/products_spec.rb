@@ -21,7 +21,7 @@ RSpec.describe 'Products API', type: :request do
 
       it 'contains the product ids and types' do
         expect(data.first).to include('id' => product.id.to_s,
-                                              'type' => 'products')
+                                      'type' => 'products')
       end
 
       it 'contains the product attributes' do
