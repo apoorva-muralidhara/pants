@@ -2,7 +2,7 @@
 
 This is a Rails 5.1.4 API-only application, using Ruby 2.4.2 and Postgres 9.6.5.
 
-It conforms to the [json_api](http://jsonapi.org) and uses [ActiveModelSerializers](https://github.com/rails-api/active_model_serializers).
+It conforms to the [json_api](http://jsonapi.org) and uses [ActiveModelSerializers](http://github.com/rails-api/active_model_serializers).
 
 It is unit tested with RSpec 3.7, FactoryGirl, and (Shoulda::Matchers)[https://github.com/thoughtbot/shoulda-matchers].
 
@@ -44,7 +44,7 @@ rspec -fd
 
 ## Running service in development
 
-To run this service at the port expected by the [clothes](apoorva-muralidhara/clothes) client:
+To run this service at the port expected by the clothes client:
 
 ```
 rails -s -p 3535
