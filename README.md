@@ -4,7 +4,7 @@ This is a Rails 5.1.4 API-only application, using Ruby 2.4.2 and Postgres 9.6.5.
 
 It conforms to the [json_api](http://jsonapi.org) and uses [ActiveModelSerializers](http://github.com/rails-api/active_model_serializers).
 
-It is unit tested with RSpec 3.7, FactoryGirl, and (Shoulda::Matchers)[https://github.com/thoughtbot/shoulda-matchers].
+It is unit tested with RSpec 3.7, FactoryGirl, and (Shoulda::Matchers)[http://github.com/thoughtbot/shoulda-matchers].
 
 The CSV data is ingested directly from the raw URLs by the script in `db/seeds.rb`.
 
