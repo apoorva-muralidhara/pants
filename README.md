@@ -23,7 +23,8 @@ At the top level of the Rails app, you'll have to do this:
 ```
 bundle install
 rails db:create:all
-RAILS_ENV=test db:migrate
+rails db:migrate
+RAILS_ENV=test railsdb:migrate
 ```
 
 ## Ingesting CSV data
