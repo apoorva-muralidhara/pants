@@ -44,7 +44,7 @@ rspec -fd
 
 ## Running service in development
 
-To run this service at the port expected by the clothes client:
+To run this service at the port expected by the [clothes](http://github.com/apoorva-muralidhara/clothes) client:
 
 ```
 rails -s -p 3535
