@@ -50,7 +50,7 @@ To run this service at the port expected by the [clothes](http://github.com/apoo
 rails -s -p 3535
 ```
 
-# Endpoint
+## Endpoint
 
 Then the following endpoint returns a list of products with associated variants, including their inventory counts:
 
