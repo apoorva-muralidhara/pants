@@ -62,3 +62,4 @@ http://localhost:3535/products
 # Improvements
 * If ingesting data from the CSVs were intended to be done many times, and there was other data to be set up in `seeds.rb`, I might move the script's functionality into a custom Rake task calling a unit-tested Rake task; and make the two URLs configurable rather than hardcoded into the script.
 * Since this is an API-only application, I don't see any need to namespace its routes and controllers under `api`, but if this were a real API to be used in production, I might want to namespace it under `v1` to allow for versioning.
+* Logging would certainly be useful!
